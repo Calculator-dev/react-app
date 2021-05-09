@@ -1,0 +1,39 @@
+.left {
+  float: left;
+  margin-top: 5px;
+}
+
+.right {
+  float: right;
+  text-decoration: none;
+}
+
+.navigator {
+  margin-top: 24px;
+  margin-right: 24px;
+}
+
+.container {
+  width: 96%;
+  padding: 12px;
+  text-align: center;
+}
+
+.input-form {
+  width: 50%;
+  margin: 24px auto;
+}
+
+.left h2 {
+  color: #3b4196;
+  margin-left: 10px;
+  margin-top: 12px;
+}
+
+.right .navigator {
+  margin-top: 22px;
+}
+
+.container h1 {
+  color: #3b4196;
+}

@@ -1,0 +1,34 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  background-color: white;
+  padding-top: 80px;
+}
+
+header,
+footer {
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  background-color: white;
+  color: black;
+  z-index: 999;
+}
+
+header {
+  top: 0;
+  height: 60px;
+  padding: 4px;
+  border-bottom: 1px solid #3b4196;
+}
+
+footer {
+  bottom: 0;
+  height: 18px;
+  font-size: 10px;
+  background: rgb(61,68,152);
+  background: linear-gradient(90deg, rgba(61,68,152,1) 29%, rgba(66,81,200,1) 100%);
+  padding-top: 4px;
+  color: white
+}
+
