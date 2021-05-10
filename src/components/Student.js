@@ -20,7 +20,15 @@ const Student = ({match, history}) => {
         }
     }, [id]);
 
+    const [emptyFirstName, setEmptyFirstName] = useState(false);
+    const [emptyLastName, setEmptyLastName] = useState(false);
+
     function changeHandler(e) {
+        if(e.target.name && e.target.value === "firstName"){
+            setEmptyFirstName(false);
+        }else if(e.target.name && e.target.value === "lastName"){
+            setEmptyLastName(false);
+        }
         setStudent({
             ...student,
             [e.target.name]: e.target.value
@@ -34,12 +42,33 @@ const Student = ({match, history}) => {
 
     const save = () => {
         if(id === 'new'){
-            delete student._id;
+            if(!student.firstName && !student.lastName){
+                setEmptyLastName(true);
+                setEmptyFirstName(true);
+                return;
+            }else if(!student.firstName){
+                setEmptyFirstName(true);
+                return;
+            }else if(!student.lastName){
+                setEmptyLastName(true);
+                return;
+            }
             insert('students', student, data => {
                 if(data) return history.push('/students');
                 console.log('There was error during save data');
             })
         }else {
+            if(!student.firstName && !student.lastName){
+                setEmptyLastName(true);
+                setEmptyFirstName(true);
+                return;
+            }else if(!student.firstName){
+                setEmptyFirstName(true);
+                return;
+            }else if(!student.lastName){
+                setEmptyLastName(true);
+                return;
+            }
             update('students', id, student, data => {
                 if(data) return history.push('/students');
                 console.log('There was error during save data');
@@ -62,14 +91,18 @@ const Student = ({match, history}) => {
                     <input type='text' 
                            name='firstName' 
                            value={student.firstName} 
-                           onChange={changeHandler} />
+                           onChange={changeHandler} 
+                           required />
+                           {emptyFirstName && <h2><span>First Name</span> field is required!</h2>}
                 </div>
                 <div style={{margin: '12px 0'}}>
                     <label htmlFor='lastName'>Last Name: </label>
                     <input type='text' 
                            name='lastName' 
                            value={student.lastName} 
-                           onChange={changeHandler} />
+                           onChange={changeHandler}
+                           required />
+                           {emptyLastName && <h2><span>Last Name</span> field is required!</h2>}
                 </div>
                 <div style={{margin: '12px 0'}}>
                     <label htmlFor='yearOfBirth'>Year of Birth: </label>

@@ -16,6 +16,7 @@
 .container {
   width: 96%;
   padding: 12px;
+  justify-content: center;
   text-align: center;
 }
 
@@ -36,4 +37,20 @@
 
 .container h1 {
   color: #3b4196;
+}
+
+.container h2 {
+  color: #3b4196;
+}
+
+.input-form h2 {
+  color: red;
+  margin-left: 80px;
+  font-size: 12px;
+}
+
+.input-form h2 span{
+  color: #ff0215;
+  font-style: italic;
+  font-size: 12px;
 }

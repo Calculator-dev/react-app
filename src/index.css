@@ -19,7 +19,7 @@ header {
   top: 0;
   height: 60px;
   padding: 4px;
-  border-bottom: 1px solid #3b4196;
+  border-bottom: 1px solid black;
 }
 
 footer {
@@ -29,6 +29,7 @@ footer {
   background: rgb(61,68,152);
   background: linear-gradient(90deg, rgba(61,68,152,1) 29%, rgba(66,81,200,1) 100%);
   padding-top: 4px;
-  color: white
+  color: white;
+  border-top: 1px solid black;
 }
 
